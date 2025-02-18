@@ -469,8 +469,6 @@ span {
     margin: auto;
 }
 
-
-/*
 .contact{
     background-color: var(--bg-color);
 }
@@ -511,7 +509,7 @@ span {
 .contact form .btn{
     margin-top: 2rem;
 }
-*/
+
 .footer{
     position: relative;
     bottom: 0;
@@ -672,3 +670,27 @@ span {
     }
 }
 
+@media (max-width:425px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .services-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width:375px){
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .services-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

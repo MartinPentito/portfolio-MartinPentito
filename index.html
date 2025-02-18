@@ -108,31 +108,25 @@
         <h2 class="heading">Projects</h2>
     
         <div class="services-container">
-            <!-- <a href="#home" class="service-box">
+            <a href="#home" class="service-box">
                 <div class="service-info">
                     <h4>Tools</h4>
                     <p>Es un proyecto dedicado a la venta de herramientas, insumos de construcciones, una especie de corralon pero virtual.</p>
                 </div>
-            </a>-->
+            </a>
     
             <a href="https://martinpentito.github.io/catalogo-laincop-iphones/" class="service-box">
                 <div class="service-info">
                     <h4>Iphones Laincop</h4>
-                    <p>Es un miniproyecto para la empresa Laincop, es un listado de celulares Apple</p>
+                    <p>Catalogo de celulares</p>
                 </div>
-            </a>
-    
-            <!--<a href="#home" class="service-box">
-                <div class="service-info">
-                    <h4>Galpon Plaza</h4>
-                    <p>Maquetado web para reconocida cervecería.</p>
-                </div>-->
             </a>
     
             <a href="https://www.laincop.com.ar/" class="service-box">
                 <div class="service-info">
                     <h4>Laincop</h4>
-                    <p>Pagina web usando Tienda Nube para hacer la parte del Backend, maquetado propio por medio de FTP, conexion de dominio y gestion de plugins de la misma. Mi primer proyecto completo.</p>
+                    <p>web usando Tienda Nube para hacer la parte del Backend, 
+                    maquetado propio por medio de FTP, conexion de dominio y gestion de plugins de la misma. Mi primer proyecto completo.</p>
                 </div>
             </a>
 
@@ -144,7 +138,7 @@
             </a>
         </div>
     </section>    
-<!--
+
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
 
@@ -161,13 +155,12 @@
             </div>
 
             <div class="input-group-2">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" class="btn">
+                <textarea id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="btn" onclick="sendWhatsAppMessage()">
             </div>
 
         </form>
     </section>
--->
     
     <footer class="footer">
         <div class="social">
@@ -201,6 +194,13 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script>function sendWhatsAppMessage() {
+        let message = document.getElementById("message").value;
+        let phone = "541150130149"; // Código de país + número
+        let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        
+        window.open(url, "_blank"); // Abre WhatsApp Web o la app en el móvil
+    }</script>
 
 </body>
 </html>
