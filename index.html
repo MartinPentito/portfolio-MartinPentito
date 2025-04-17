@@ -10,8 +10,8 @@
 <body>
     
     <header class="header">
-        <a href="#home" class="logo">Aquel
-        <span>Muchachitx</span></a>
+        <a href="#home" class="logo">Martin Ezequiel
+        <span>Pentito</span></a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
@@ -25,12 +25,9 @@
 
     <section class="home" id="home">
         <div class="home-content">
-            <h1>Hi, Its <span>Martin</span></h1>
+            <h1>Hi, Its <span>MEP.</span></h1>
             <h3 class="text-animation">im a <span></span></h3>
-            <p>This is the profile of a person who found peace within everything he likes to do.
-                Putting the technical part but also the creative part, the art.
-                Looking forward to joining a computer science team to get the most out of daily learning. Not only on a technical level but also on a human level.
-                Life is a constant learning, we fall, we get up, the problem has a solution.</p>
+            <p>I'm someone who has found balance and fulfillment in combining the technical with the creative—whether it's through coding or artistic expression. I’m passionate about continuous learning and eager to be part of a computer science team where I can grow both professionally and personally. To me, life is a journey of constant learning: we fall, we get back up, and every challenge brings an opportunity to find a solution. I'm driven by curiosity, resilience, and the belief that both the human and technical sides of our work matter equally.</p>
 
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/martinepentito/"><i class='bx bxl-linkedin' ></i></a>
@@ -88,7 +85,7 @@
                 <div class="timeline-date">2017</div>
                 <div class="timeline-content">
                     <h3>CENS 38</h3>
-                    <p>Perito en informatica</p>
+                    <p>Especialidad: Computacion</p>
                 </div>
             </div>
 
@@ -108,10 +105,16 @@
         <h2 class="heading">Projects</h2>
     
         <div class="services-container">
+            <a href="https://undateable.github.io/Portfolio/" class="service-box">
+                <div class="service-info">
+                    <h4>Portfolio</h4>
+                    <p>Portfolio web para Guionista de Videojuegos</p>
+                </div>
+            </a>
             <a href="#home" class="service-box">
                 <div class="service-info">
-                    <h4>Tools</h4>
-                    <p>Es un proyecto dedicado a la venta de herramientas, insumos de construcciones, una especie de corralon pero virtual.</p>
+                    <h4>Arkimapen</h4>
+                    <p>--- coming soon ---</p>
                 </div>
             </a>
     
@@ -125,7 +128,7 @@
             <a href="https://www.laincop.com.ar/" class="service-box">
                 <div class="service-info">
                     <h4>Laincop</h4>
-                    <p>web usando Tienda Nube para hacer la parte del Backend, 
+                    <p>Web usando Tienda Nube para hacer la parte del Backend, 
                     maquetado propio por medio de FTP, conexion de dominio y gestion de plugins de la misma. Mi primer proyecto completo.</p>
                 </div>
             </a>
@@ -139,29 +142,6 @@
         </div>
     </section>    
 
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-
-        <form action="">
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
-                </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="Subject">
-                </div>
-            </div>
-
-            <div class="input-group-2">
-                <textarea id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" class="btn" onclick="sendWhatsAppMessage()">
-            </div>
-
-        </form>
-    </section>
-    
     <footer class="footer">
         <div class="social">
             <a href="https://www.linkedin.com/in/martinepentito/"><i class='bx bxl-linkedin' ></i></a>
@@ -189,19 +169,11 @@
 
         </ul>-->
         <p class="copyright">
-            © AquelMuchachitx | All Rights Reserved
+            © MEP. | All Rights Reserved
         </p>
     </footer>
 
     <script src="assets/js/script.js"></script>
-    <script>function sendWhatsAppMessage() {
-        let message = document.getElementById("message").value;
-        let phone = "541150130149"; // Código de país + número
-        let url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-        
-        window.open(url, "_blank"); // Abre WhatsApp Web o la app en el móvil
-    }</script>
-
 </body>
 </html>
 
