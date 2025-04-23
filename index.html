@@ -10,8 +10,8 @@
 <body>
     
     <header class="header">
-        <a href="#home" class="logo">Martin Ezequiel
-        <span>Pentito</span></a>
+        <a href="#home" class="logo">MEP
+        <span>.</span></a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
@@ -19,13 +19,13 @@
             <a href="#home">Home</a>
             <a href="#education">Education</a>
             <a href="#services">Projects</a>
-            <a href="./assets/PentitoMartínEzequiel-CV.pdf">Curriculum</a>
+            <a href="#carousel">Skills</a>
         </nav>
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
-            <h1>Hi, Its <span>MEP.</span></h1>
+            <h1>Hi, Its <span>Martin Ezequiel Pentito</span></h1>
             <h3 class="text-animation">im a <span></span></h3>
             <p>I'm someone who has found balance and fulfillment in combining the technical with the creative—whether it's through coding or artistic expression. I’m passionate about continuous learning and eager to be part of a computer science team where I can grow both professionally and personally. To me, life is a journey of constant learning: we fall, we get back up, and every challenge brings an opportunity to find a solution. I'm driven by curiosity, resilience, and the belief that both the human and technical sides of our work matter equally.</p>
 
@@ -33,12 +33,11 @@
                 <a href="https://www.linkedin.com/in/martinepentito/"><i class='bx bxl-linkedin' ></i></a>
                 <a href="https://github.com/MartinPentito"><i class='bx bxl-github' ></i></a>
                 <a href="https://www.instagram.com/aquelmuchachitx/?igsh=MTIzbTEzYWZoYmd4MA%3D%3D&utm_source=qr#"><i class='bx bxl-instagram-alt' ></i></a>
-                <a href="#"><i class='bx bxl-twitter' ></i></a>
             </div>
 
             <div class="btn-group">
-                <a href="#" class="btn">Hire</a>
-                <a href="#contact" class="btn">Contact</a>
+                <a href="assets\PentitoMartínEzequiel-CV.pdf" class="btn">CV</a>
+                <a href="#social" class="btn">Contact</a>
             </div>
         </div>
 
@@ -105,7 +104,7 @@
         <h2 class="heading">Projects</h2>
     
         <div class="services-container">
-            <a href="https://undateable.github.io/Portfolio/" class="service-box">
+            <a href="https://undateable.github.io/Portfolio/" class="service-box" id="image-service">
                 <div class="service-info">
                     <h4>Portfolio</h4>
                     <p>Portfolio web para Guionista de Videojuegos</p>
@@ -139,17 +138,153 @@
                     <p>Catalogo de productos de en todo lo relacionado con la seguridad</p>
                 </div>
             </a>
+            <a href="https://martinpentito.github.io/WebTools/" class="service-box">
+                <div class="service-info">
+                    <h4>Tools</h4>
+                    <p>Proyecto de practica catalogo</p>
+                </div>
+            </a>
         </div>
-    </section>    
+    </section>
+    
+    <section class="carousel" id="carousel">
+        <div class="logos">
+            <img
+            src="./assets/img/logos/bootstrap-logo.png"
+            alt="Logo Bootstrap"
+            />
+            <img
+            src="./assets/img/logos/css-logo.png"
+            alt="Logo CSS"
+            />
+            <img
+            src="./assets/img/logos/html-logo.png"
+            alt="Logo HTML"
+            />
+            <img
+            src="./assets/img/logos/javascript-logo.png"
+            alt="Logo JavaScript"
+            />
+            <img
+            src="./assets/img/logos/logo-github.png"
+            alt="Logo GitHub"
+            />
+            <!-- <img
+            src="./logos/logo-mysql.png"
+            alt="Logo MySQL"
+            />
+            <img
+            src="./logos/logo-react-router.png"
+            alt="Logo React Router"
+            />
+            <img
+            src="./logos/react-logo.png"
+            alt="Logo React"
+            />
+            <img
+            src="./logos/logo-jwt.png"
+            alt="Logo JWT"
+            />-->
+        </div>
+
+        <div
+            class="logos"
+            aria-hidden
+        >
+            <img
+            src="./assets/img/logos/bootstrap-logo.png"
+            alt="Logo Bootstrap"
+            />
+            <img
+            src="./assets/img/logos/css-logo.png"
+            alt="Logo CSS"
+            />
+            <img
+            src="./assets/img/logos/html-logo.png"
+            alt="Logo HTML"
+            />
+            <img
+            src="./assets/img/logos/javascript-logo.png"
+            alt="Logo JavaScript"
+            />
+            <img
+            src="./assets/img/logos/logo-github.png"
+            alt="Logo GitHub"
+            />
+            <!--<img
+            src="./logos/logo-mysql.png"
+            alt="Logo MySQL"
+            />
+            <img
+            src="./logos/logo-react-router.png"
+            alt="Logo React Router"
+            />
+            <img
+            src="./logos/react-logo.png"
+            alt="Logo React"
+            />
+            <img
+            src="./logos/logo-jwt.png"
+            alt="Logo JWT"
+            />-->
+        </div>
+        <div class="logos">
+            <img
+            src="./assets/img/logos/bootstrap-logo.png"
+            alt="Logo Bootstrap"
+            />
+            <img
+            src="./assets/img/logos/css-logo.png"
+            alt="Logo CSS"
+            />
+            <img
+            src="./assets/img/logos/html-logo.png"
+            alt="Logo HTML"
+            />
+            <img
+            src="./assets/img/logos/javascript-logo.png"
+            alt="Logo JavaScript"
+            />
+            <img
+            src="./assets/img/logos/logo-github.png"
+            alt="Logo GitHub"
+            />
+            <!-- <img
+            src="./logos/logo-mysql.png"
+            alt="Logo MySQL"
+            />
+            <img
+            src="./logos/logo-react-router.png"
+            alt="Logo React Router"
+            />
+            <img
+            src="./logos/react-logo.png"
+            alt="Logo React"
+            />
+            <img
+            src="./logos/logo-jwt.png"
+            alt="Logo JWT"
+            />-->
+        </div>
+        </section>
 
     <footer class="footer">
-        <div class="social">
+        <div class="social" id="social">
             <a href="https://www.linkedin.com/in/martinepentito/"><i class='bx bxl-linkedin' ></i></a>
             <a href="https://github.com/MartinPentito"><i class='bx bxl-github' ></i></a>
             <a href="https://www.instagram.com/aquelmuchachitx/?igsh=MTIzbTEzYWZoYmd4MA%3D%3D&utm_source=qr#"><i class='bx bxl-instagram-alt' ></i></a>
-            <a href="#"><i class='bx bxl-twitter' ></i></a>
         </div>
-
+        <div class="center-body">
+            <div class="loader-spanne-20">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         <!--  <ul class="list">
             <li>
                 <a href="#">FAQ</a>

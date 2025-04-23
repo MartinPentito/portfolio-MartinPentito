@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +15,11 @@
     --second-bg-color: #000000;
     --text-color: rgb(255, 255, 255);
     --main-color: #b500c5d2;
+    --carousel-speed: 15s;
+    --carousel-gap: 4rem;
+    --carousel-padding: 3.75rem;
+    --logo-width: 15rem;
+    --gradient-width: 15%;
 }
 
 html {
@@ -83,7 +89,7 @@ body {
 }
 
 section {
-    min-height: 100vh;
+    min-height: 12vh;
     padding: 10rem 12% 10rem;
 }
 
@@ -302,7 +308,7 @@ span {
 }
 
 .heading{
-    font-size: 8rem;
+    font-size: 6rem;
     text-align: center;
     margin: 5rem 0;
 }
@@ -473,45 +479,67 @@ span {
     margin: auto;
 }
 
-.contact{
-    background-color: var(--bg-color);
+.carousel {
+position: relative;
+background-color: rgb(165, 4, 206);
+padding-block: var(--carousel-padding);
+display: flex;
+column-gap: var(--carousel-gap);
+overflow-x: hidden;
+box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+
+    .logos {
+        display: flex;
+        column-gap: var(--carousel-gap);
+        animation: scroll var(--carousel-speed) linear infinite;
+        will-change: transform;
+
+        img {
+        width: var(--logo-width);
+        object-fit: contain;
+        transition: scale 0.5s;
+        user-select: none;
+
+        &:hover {
+            scale: 1.10;
+        }
+        }
+    }
+
+    &:hover .logos {
+        animation-play-state: paused;
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: var(--gradient-width);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background-image: linear-gradient(to right, rgb(0, 0, 0), transparent);
+    }
+
+    &::after {
+        right: 0;
+        background-image: linear-gradient(to left, rgb(0, 0, 0), transparent);
+    }
 }
 
-.contact h2{
-    margin-bottom: 3rem;
-    color: white;
-}
+    @keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
 
-.contact form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    margin: 5rem auto;
-    text-align: center;
-}
-
-.contact form .input-box{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.contact form .input-box input,
-.contact form textarea{
-    width: 100%;
-    padding: 2.5rem;
-    font-size: 1.8rem;
-    color: var(--text-color);
-    background: var(--bg-color);
-    border-radius: 2rem;
-    border: 2px solid var(--main-color);
-    margin: 1.5rem 0;
-    resize: none;
-}
-
-.contact form .btn{
-    margin-top: 2rem;
+    100% {
+        transform: translateX(calc(-100% - var(--carousel-gap)));
+    }
 }
 
 .footer{
@@ -570,6 +598,69 @@ span {
 
 .footer ul li{
     display: inline-block;
+}
+
+.loader-spanne-20 {
+position: relative;
+width: 100px;
+height: 30px;
+padding: 0;
+}
+.loader-spanne-20 > span {
+position: absolute;
+right: 0;
+width: 3px;
+height: 30px;
+background-color: rgb(116, 204, 197);
+display: block;
+border-radius: 3px;
+transform-origin: 50% 100%;
+animation: move 2.8s linear infinite;
+}
+.loader-spanne-20 > span:nth-child(1) {
+animation-delay: -0.4s;
+}
+.loader-spanne-20 > span:nth-child(2) {
+animation-delay: -0.8s;
+}
+.loader-spanne-20 > span:nth-child(3) {
+animation-delay: -1.2s;
+}
+.loader-spanne-20 > span:nth-child(4) {
+animation-delay: -1.6s;
+}
+.loader-spanne-20 > span:nth-child(5) {
+animation-delay: -2s;
+}
+.loader-spanne-20 > span:nth-child(6) {
+animation-delay: -2.4s;
+}
+.loader-spanne-20 > span:nth-child(7) {
+animation-delay: -2.8s;
+}
+@keyframes move {
+0% {
+    opacity: 0;
+    transform: translateX(0px) rotate(0deg);
+}
+20% {
+    opacity: 1;
+}
+40% {
+    transform: translateX(-40px) rotate(0deg);
+}
+50% {
+    opacity: 1;
+    transform: translateX(-50px) rotate(22deg);
+}
+85% {
+    opacity: 1;
+    transform: translateX(-85px) rotate(60deg);
+}
+100% {
+    opacity: 0;
+    transform: translateX(-100px) rotate(65deg);
+}
 }
 
 .footer .copyright{
@@ -689,11 +780,6 @@ span {
 }
 
 @media (max-width:450px){
-    body{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .services-container{
         display: flex;
         flex-direction: column;
@@ -701,11 +787,6 @@ span {
     }
 }
 @media (max-width:375px){
-    body{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .services-container{
         display: flex;
         flex-direction: column;
