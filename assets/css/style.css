@@ -14,7 +14,7 @@
     --bg-color: #000000;
     --second-bg-color: #000000;
     --text-color: rgb(255, 255, 255);
-    --main-color: #b500c5d2;
+    --main-color: #e46612;
     --carousel-speed: 15s;
     --carousel-gap: 4rem;
     --carousel-padding: 3.75rem;
@@ -481,7 +481,7 @@ span {
 
 .carousel {
 position: relative;
-background-color: rgb(165, 4, 206);
+background-color:var(--main-color);
 padding-block: var(--carousel-padding);
 display: flex;
 column-gap: var(--carousel-gap);
