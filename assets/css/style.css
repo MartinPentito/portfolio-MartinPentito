@@ -479,57 +479,76 @@ span {
     margin: auto;
 }
 
+/* Carousel using icon badges instead of image logos */
 .carousel {
-position: relative;
-background-color:var(--main-color);
-padding-block: var(--carousel-padding);
-display: flex;
-column-gap: var(--carousel-gap);
-overflow-x: hidden;
-box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+  position: relative;
+  background-color: var(--main-color);
+  padding-block: var(--carousel-padding);
+  overflow: hidden;
+}
 
-    .logos {
-        display: flex;
-        column-gap: var(--carousel-gap);
-        animation: scroll var(--carousel-speed) linear infinite;
-        will-change: transform;
+.carousel .logos {
+  display: flex;
+  gap: var(--carousel-gap);
+  align-items: center;
+  animation: scroll var(--carousel-speed) linear infinite;
+  will-change: transform;
+}
 
-        img {
-        width: var(--logo-width);
-        object-fit: contain;
-        transition: scale 0.5s;
-        user-select: none;
+.carousel .logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--logo-width);
+  gap: 0.8rem;
+  color: var(--text-color);
+  background: rgba(255,255,255,0.03);
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+  user-select: none;
+}
 
-        &:hover {
-            scale: 1.10;
-        }
-        }
-    }
+.carousel .logo-item i {
+  font-size: 4rem;
+  color: var(--text-color);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+}
 
-    &:hover .logos {
-        animation-play-state: paused;
-    }
+.carousel .logo-item span {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
 
-    &::after,
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: var(--gradient-width);
-        z-index: 1;
-        pointer-events: none;
-    }
+.carousel .logo-item:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
 
-    &::before {
-        left: 0;
-        background-image: linear-gradient(to right, rgb(0, 0, 0), transparent);
-    }
+.carousel:hover .logos { animation-play-state: paused; }
 
-    &::after {
-        right: 0;
-        background-image: linear-gradient(to left, rgb(0, 0, 0), transparent);
-    }
+.carousel::before,
+.carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--gradient-width);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel::before {
+  left: 0;
+  background-image: linear-gradient(to right, rgb(0, 0, 0), transparent);
+}
+
+.carousel::after {
+  right: 0;
+  background-image: linear-gradient(to left, rgb(0, 0, 0), transparent);
 }
 
     @keyframes scroll {
