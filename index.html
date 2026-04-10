@@ -7,25 +7,33 @@
     <title>Martin Ezequiel Pentito | Portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
     
     <header class="header">
-        <a href="#home" class="logo">MP
+        <a href="./index.html#home" class="logo">MP
         <span>.</span></a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
-        <nav class="navbar" class="active">
-            <a href="#home">Home</a>
-            <a href="#education">Education</a>
-            <a href="#services">Projects</a>
-            <a href="#carousel">Skills</a>
+        <nav class="navbar">
+            <a href="./index.html#home">Home</a>
+            <a href="./education.html">Education</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./index.html#carousel">Skills</a>
         </nav>
     </header>
 
     <section class="home" id="home">
-        <div class="home-content">
+        <div class="home-content terminal-panel">
+            <div class="terminal-bar" aria-hidden="true">
+                <span class="terminal-dot terminal-dot-red"></span>
+                <span class="terminal-dot terminal-dot-yellow"></span>
+                <span class="terminal-dot terminal-dot-green"></span>
+                <span class="terminal-path">martin@portfolio:~</span>
+            </div>
+            <p class="terminal-command">$ whoami</p>
             <h1>Hi, Its <span>Martin Pentito</span></h1>
             <h3 class="text-animation">im a <span></span></h3>
             <p>I'm someone who has found balance and fulfillment in combining the technical with the creative—whether it's through coding or artistic expression. I’m passionate about continuous learning and eager to be part of a computer science team where I can grow both professionally and personally. To me, life is a journey of constant learning: we fall, we get back up, and every challenge brings an opportunity to find a solution. I'm driven by curiosity, resilience, and the belief that both the human and technical sides of our work matter equally.</p>
@@ -37,8 +45,8 @@
             </div>
 
             <div class="btn-group">
-                <a href="assets\PentitoMartínEzequiel-CV.pdf" class="btn">CV</a>
-                <a href="#social" class="btn">Contact</a>
+                <a href="assets\PentitoMartínEzequiel-CV.pdf" class="btn"><span>$</span> open cv</a>
+                <a href="./index.html#social" class="btn"><span>$</span> contact</a>
             </div>
         </div>
 
@@ -49,53 +57,48 @@
     </section>
 
     
-    <section class="carousel" id="carousel">
-        <div class="logos">
-            <div class="logo-item">
-                <i class='bx bxl-bootstrap'></i>
-                <span>Bootstrap</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-css3'></i>
-                <span>CSS</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-html5'></i>
-                <span>HTML</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-javascript'></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-github'></i>
-                <span>GitHub</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxs-data'></i>
-                <span>SQL</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-bootstrap'></i>
-                <span>Bootstrap</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-css3'></i>
-                <span>CSS</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-html5'></i>
-                <span>HTML</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-javascript'></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="logo-item">
-                <i class='bx bxl-github'></i>
-                <span>GitHub</span>
-            </div>
+    <section class="skills" id="carousel">
+        <h2 class="heading">Skills</h2>
 
+        <div class="skills-grid">
+            <article class="skill-card">
+                <p class="skill-code"><span>public enum</span> LANGUAGES { C#, C++, Python, JavaScript, HTML5, CSS }</p>
+                <div class="skill-icons" aria-label="Programming languages">
+                    <span class="skill-token">C#</span>
+                    <span class="skill-token">C++</span>
+                    <i class="devicon-python-plain skill-icon" title="Python" aria-hidden="true"></i>
+                    <i class="devicon-javascript-plain skill-icon" title="JavaScript" aria-hidden="true"></i>
+                    <i class="devicon-html5-plain skill-icon" title="HTML5" aria-hidden="true"></i>
+                    <i class="devicon-css3-plain skill-icon" title="CSS" aria-hidden="true"></i>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <p class="skill-code"><span>public enum</span> PLATFORMS { Windows, Linux, Mobile }</p>
+                <div class="skill-icons" aria-label="Platforms">
+                    <i class='bx bxl-windows skill-icon' title="Windows" aria-hidden="true"></i>
+                    <i class='bx bxl-tux skill-icon' title="Linux" aria-hidden="true"></i>
+                    <i class='bx bx-mobile-alt skill-icon' title="Mobile" aria-hidden="true"></i>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <p class="skill-code"><span>public enum</span> SOFTWARE { Unity3D, UnrealEngine, Blender }</p>
+                <div class="skill-icons" aria-label="Software">
+                    <i class="devicon-unity-plain skill-icon" title="Unity" aria-hidden="true"></i>
+                    <span class="skill-token">UE</span>
+                    <i class="devicon-blender-original skill-icon" title="Blender" aria-hidden="true"></i>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <p class="skill-code"><span>public enum</span> MEDIA { LinkedIn, GitHub, itch.io }</p>
+                <div class="skill-icons" aria-label="Social media and platforms">
+                    <i class='bx bxl-linkedin-square skill-icon' title="LinkedIn" aria-hidden="true"></i>
+                    <i class='bx bxl-github skill-icon' title="GitHub" aria-hidden="true"></i>
+                    <span class="skill-token">itch</span>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -109,7 +112,7 @@
                     <p>Portfolio web para Guionista de Videojuegos</p>
                 </div>
             </a>
-            <a href="#home" class="service-box">
+            <a href="./index.html#home" class="service-box">
                 <div class="service-info">
                     <h4>Arkimapen</h4>
                     <p>--- coming soon ---</p>
@@ -146,6 +149,7 @@
         </div>
     </section>
     <footer class="footer">
+        <p class="footer-command">martin@portfolio:~$ ls ./links</p>
         <div class="social" id="social">
             <a href="https://www.linkedin.com/in/martinepentito/"><i class='bx bxl-linkedin' ></i></a>
             <a href="https://github.com/MartinPentito"><i class='bx bxl-github' ></i></a>
@@ -153,7 +157,7 @@
         </div>
         <ul class="list">
             <li>
-                <a href="./index.html">Home</a>
+                <a href="./index.html#home">Home</a>
             </li>
 
             <li>
@@ -161,7 +165,7 @@
             </li>
 
             <li>
-                <a href="./index.html">About Me</a>
+                <a href="./index.html#home">About Me</a>
             </li>
         </ul>
         <p class="copyright">
