@@ -290,23 +290,23 @@ span {
 @keyframes words{
     0%,
     20%{
-        content: "Student";
+        content: "Computer Technician";
     }
     21%,
     40%{
-        content:"Interior Design";
+        content: "Musician";
     }
     41%,
     60%{
-        content: "Musician";
+        content: "Writer";
     }
     61%,
     80%{
-        content: "Web Designer";
+        content: "Composer";
     }
     81%,
     100%{
-        content: "Student";
+        content: "Apprentice";
     }
 }
 
@@ -505,29 +505,62 @@ span {
 }
 
 .service-info p{
-    font-size: 1.6rem;
-    font-weight: 600;
-    max-height: 100px;
-    line-height: 1.7;
-    margin: auto;
+        font-size: 1.6rem;
+        font-weight: 600;
+        max-height: 100px;
+        line-height: 1.7;
+        margin: auto;
 }
 
-
 .carousel {
-    position: relative;
-    background: linear-gradient(90deg, rgba(10, 27, 18, 0.98) 0%, rgba(15, 48, 28, 0.98) 50%, rgba(10, 27, 18, 0.98) 100%);
-    padding-block: var(--carousel-padding);
-    display: flex;
-    column-gap: var(--carousel-gap);
-    overflow-x: hidden;
-    box-shadow: inset 0 0 0 1px rgba(54, 255, 152, 0.2), 0 4px 10px rgb(0 0 0 / 15%);
+        position: relative;
+        background: linear-gradient(90deg, rgba(10, 27, 18, 0.98) 0%, rgba(15, 48, 28, 0.98) 50%, rgba(10, 27, 18, 0.98) 100%);
+        padding-block: var(--carousel-padding);
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px rgba(54, 255, 152, 0.2), 0 4px 10px rgb(0 0 0 / 15%);
 }
 
 .carousel .logos {
     display: flex;
-    column-gap: var(--carousel-gap);
+        column-gap: var(--carousel-gap);
+        align-items: center;
     animation: scroll var(--carousel-speed) linear infinite;
     will-change: transform;
+}
+
+.carousel .logo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: calc(var(--logo-width) * 1.2);
+        gap: 1.2rem;
+        color: var(--text-color);
+        background: rgba(54, 255, 152, 0.08);
+        border: 1px solid rgba(54, 255, 152, 0.28);
+        border-radius: 1.2rem;
+        padding: 2rem;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        user-select: none;
+}
+
+.carousel .logo-item i {
+        font-size: 6rem;
+        color: var(--main-color);
+        filter: drop-shadow(0 0 16px rgba(54, 255, 152, 0.22));
+}
+
+.carousel .logo-item span {
+        font-size: 2.2rem;
+        color: var(--text-color);
+        margin-top: 0.5rem;
+        font-weight: 600;
+}
+
+.carousel .logo-item:hover {
+        transform: translateY(-6px) scale(1.04);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        border-color: var(--main-color);
 }
 
 .carousel .logos img {
@@ -632,69 +665,6 @@ span {
 
 .footer ul li{
     display: inline-block;
-}
-
-.loader-spanne-20 {
-position: relative;
-width: 100px;
-height: 30px;
-padding: 0;
-}
-.loader-spanne-20 > span {
-position: absolute;
-right: 0;
-width: 3px;
-height: 30px;
-background-color: rgb(116, 204, 197);
-display: block;
-border-radius: 3px;
-transform-origin: 50% 100%;
-animation: move 2.8s linear infinite;
-}
-.loader-spanne-20 > span:nth-child(1) {
-animation-delay: -0.4s;
-}
-.loader-spanne-20 > span:nth-child(2) {
-animation-delay: -0.8s;
-}
-.loader-spanne-20 > span:nth-child(3) {
-animation-delay: -1.2s;
-}
-.loader-spanne-20 > span:nth-child(4) {
-animation-delay: -1.6s;
-}
-.loader-spanne-20 > span:nth-child(5) {
-animation-delay: -2s;
-}
-.loader-spanne-20 > span:nth-child(6) {
-animation-delay: -2.4s;
-}
-.loader-spanne-20 > span:nth-child(7) {
-animation-delay: -2.8s;
-}
-@keyframes move {
-0% {
-    opacity: 0;
-    transform: translateX(0px) rotate(0deg);
-}
-20% {
-    opacity: 1;
-}
-40% {
-    transform: translateX(-40px) rotate(0deg);
-}
-50% {
-    opacity: 1;
-    transform: translateX(-50px) rotate(22deg);
-}
-85% {
-    opacity: 1;
-    transform: translateX(-85px) rotate(60deg);
-}
-100% {
-    opacity: 0;
-    transform: translateX(-100px) rotate(65deg);
-}
 }
 
 .footer .copyright{
@@ -813,9 +783,6 @@ animation-delay: -2.8s;
     .services-container{
         display: flex;
         flex-direction: column;
-    }
-    section{
-        padding: 0rem 9% 2rem;
     }
 }
 
