@@ -1,26 +1,43 @@
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('header nav a');
 
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAtributte('id');
+const closeMobileMenu = () => {
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
 
-        if(top >= offset && top < offset + height){
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ' ] ').classList.add('active');
-            })
+const setActiveLinkOnScroll = () => {
+    const scrollPosition = window.scrollY;
+
+    sections.forEach((section) => {
+        const offset = section.offsetTop - 180;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollPosition >= offset && scrollPosition < offset + height) {
+            navLinks.forEach((link) => link.classList.remove('active'));
+            const activeLink = document.querySelector(`header nav a[href="#${id}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
         }
-    })
-}
+    });
+};
 
+window.addEventListener('scroll', () => {
+    setActiveLinkOnScroll();
+    closeMobileMenu();
+});
 
-menuIcon.onclick = () => {
+menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-}
+});
+
+navLinks.forEach((link) => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+setActiveLinkOnScroll();

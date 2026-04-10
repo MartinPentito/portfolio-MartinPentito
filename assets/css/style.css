@@ -7,14 +7,14 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: "Poppins", sans-serif;
+    font-family: Consolas, "Courier New", Menlo, Monaco, monospace;
 }
 
 :root {
-    --bg-color: #000000;
-    --second-bg-color: #000000;
-    --text-color: rgb(255, 255, 255);
-    --main-color: #b500c5d2;
+    --bg-color: #06110b;
+    --second-bg-color: #081710;
+    --text-color: #d7ffe7;
+    --main-color: #36ff98;
     --carousel-speed: 15s;
     --carousel-gap: 4rem;
     --carousel-padding: 3.75rem;
@@ -25,11 +25,31 @@
 html {
     font-size: 60%;
     overflow-x: hidden;
+    scroll-padding-top: 10rem;
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    line-height: 1.5;
+    background-image: radial-gradient(circle at top, rgba(54, 255, 152, 0.12), transparent 30%), linear-gradient(180deg, rgba(5, 18, 11, 0.96) 0%, rgba(3, 10, 7, 1) 100%);
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(rgba(54, 255, 152, 0.08) 1px, transparent 1px);
+    background-size: 100% 4px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
 }
 
 .header {
@@ -38,8 +58,9 @@ body {
     left: 0;
     width: 100%;
     padding: 4rem 12% 4rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(4, 15, 10, 0.72);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(54, 255, 152, 0.18);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,7 +84,7 @@ body {
 }
 
 .logo span {
-    text-shadow: 0 0 25px var(--main-color);
+    text-shadow: 0 0 18px var(--main-color);
     color: var(--main-color);
 }
 
@@ -74,6 +95,8 @@ body {
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
 .navbar a:hover,
@@ -117,6 +140,7 @@ span {
     margin-bottom: 2rem;
     margin-top: 1rem;
     font-size: 7rem;
+    text-shadow: 0 0 12px rgba(54, 255, 152, 0.18);
 }
 
 .home-content h1 {
@@ -124,6 +148,7 @@ span {
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
+    text-transform: uppercase;
 }
 
 .home-img {
@@ -135,9 +160,11 @@ span {
     top: 3rem;
     width: 15vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px var(--main-color);
+    box-shadow: 0 0 25px rgba(54, 255, 152, 0.45);
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    border: 2px solid rgba(54, 255, 152, 0.35);
+    filter: saturate(0.9) contrast(1.05);
 }
 
 .home-img img:hover {
@@ -162,10 +189,11 @@ span {
     background: transparent;
     border: 2px solid var(--main-color);
     font-size: 2.5rem;
-    border-radius: 50%;
+    border-radius: 0.8rem;
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease-in-out;
+    box-shadow: inset 0 0 0 1px rgba(54, 255, 152, 0.1);
 }
 
 .social-icons a:hover {
@@ -178,21 +206,33 @@ span {
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
-    border-radius: 4rem;
+    background: rgba(54, 255, 152, 0.12);
+    box-shadow: 0 0 18px rgba(54, 255, 152, 0.18);
+    border-radius: 0.8rem;
     font-size: 1.6rem;
-    color: black;
-    border: 2px solid transparent;
-    letter-spacing: 0.1rem;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    letter-spacing: 0.12rem;
     font-weight: 600;
     transition: 0.3s ease-in-out;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 .btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 50px var(--main-color);
+    box-shadow: 0 0 28px rgba(54, 255, 152, 0.35);
+    background: var(--main-color);
+    color: #04110b;
+}
+
+.navbar a:focus-visible,
+.btn:focus-visible,
+.social-icons a:focus-visible,
+.footer .social a:focus-visible,
+.service-box:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 4px;
 }
 
 .btn-group {
@@ -202,9 +242,9 @@ span {
 }
 
 .btn-group a:nth-of-type(2) {
-    background-color: black;
+    background-color: transparent;
     color: var(--main-color);
-    border: 2px solid var(--main-color);
+    border: 1px solid var(--main-color);
     box-shadow: 0 0 25px transparent;
 }
 
@@ -241,17 +281,6 @@ span {
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
 
-.text-animation span::after {
-    content: "";
-    background-color: var(--bg-color);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-left: 3px solid var(--bg-color);
-    right: -8px;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
-}
-
 @keyframes cursor{
     to{
         border-left: 2px solid var(--main-color);
@@ -261,19 +290,19 @@ span {
 @keyframes words{
     0%,
     20%{
-        content: "Technical";
+        content: "Student";
     }
     21%,
     40%{
-        content:"WebDesigner";
+        content:"Interior Design";
     }
     41%,
     60%{
-        content: "IT";
+        content: "Musician";
     }
     61%,
     80%{
-        content: "Electronic";
+        content: "Web Designer";
     }
     81%,
     100%{
@@ -311,6 +340,8 @@ span {
     font-size: 6rem;
     text-align: center;
     margin: 5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
 }
 
 .education{
@@ -379,10 +410,10 @@ span {
 
 .timeline-content{
     background-color: var(--bg-color);
-    border: 3px solid var(--main-color);
+    border: 1px solid var(--main-color);
     padding:  30px 50px;
-    border-radius: 4rem;
-    box-shadow: 0 0 20px var(--main-color);
+    border-radius: 1.2rem;
+    box-shadow: 0 0 20px rgba(54, 255, 152, 0.18);
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
@@ -414,7 +445,7 @@ span {
 }
 
 ::-webkit-scrollbar-track{
-    background-color: var(--main-color);
+    background-color: var(--bg-color);
     width: 50px;
 }
 
@@ -436,21 +467,22 @@ span {
 }
 
 .service-box{
-    background-color: var(--main-color);
+    background-color: rgba(54, 255, 152, 0.08);
     height: 300px;
-    border-radius: 3rem;
-    border: 5px solid transparent;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(54, 255, 152, 0.35);
     cursor: pointer;
     transition: 0.4s ease-in-out;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color);
     display: block;
+    box-shadow: 0 0 24px rgba(54, 255, 152, 0.08);
 }
 
 .service-box:hover{
-    background-color: white;
-    color: black;
-    border: 5px solid var(--main-color);
+    background-color: rgba(54, 255, 152, 0.14);
+    color: var(--text-color);
+    border: 1px solid var(--main-color);
     transform: scale(1.03);
 }
 
@@ -469,6 +501,7 @@ span {
     font-size: 3rem;
     font-weight: 800;
     line-height: 2;
+    text-transform: uppercase;
 }
 
 .service-info p{
@@ -479,60 +512,61 @@ span {
     margin: auto;
 }
 
+
 .carousel {
-position: relative;
-background-color: rgb(165, 4, 206);
-padding-block: var(--carousel-padding);
-display: flex;
-column-gap: var(--carousel-gap);
-overflow-x: hidden;
-box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
-
-    .logos {
-        display: flex;
-        column-gap: var(--carousel-gap);
-        animation: scroll var(--carousel-speed) linear infinite;
-        will-change: transform;
-
-        img {
-        width: var(--logo-width);
-        object-fit: contain;
-        transition: scale 0.5s;
-        user-select: none;
-
-        &:hover {
-            scale: 1.10;
-        }
-        }
-    }
-
-    &:hover .logos {
-        animation-play-state: paused;
-    }
-
-    &::after,
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: var(--gradient-width);
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    &::before {
-        left: 0;
-        background-image: linear-gradient(to right, rgb(0, 0, 0), transparent);
-    }
-
-    &::after {
-        right: 0;
-        background-image: linear-gradient(to left, rgb(0, 0, 0), transparent);
-    }
+    position: relative;
+    background: linear-gradient(90deg, rgba(10, 27, 18, 0.98) 0%, rgba(15, 48, 28, 0.98) 50%, rgba(10, 27, 18, 0.98) 100%);
+    padding-block: var(--carousel-padding);
+    display: flex;
+    column-gap: var(--carousel-gap);
+    overflow-x: hidden;
+    box-shadow: inset 0 0 0 1px rgba(54, 255, 152, 0.2), 0 4px 10px rgb(0 0 0 / 15%);
 }
 
-    @keyframes scroll {
+.carousel .logos {
+    display: flex;
+    column-gap: var(--carousel-gap);
+    animation: scroll var(--carousel-speed) linear infinite;
+    will-change: transform;
+}
+
+.carousel .logos img {
+    width: var(--logo-width);
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    user-select: none;
+}
+
+.carousel .logos img:hover {
+    transform: scale(1.1);
+}
+
+.carousel:hover .logos {
+    animation-play-state: paused;
+}
+
+.carousel::after,
+.carousel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: var(--gradient-width);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel::before {
+    left: 0;
+    background-image: linear-gradient(to right, rgb(0, 0, 0), transparent);
+}
+
+.carousel::after {
+    right: 0;
+    background-image: linear-gradient(to left, rgb(0, 0, 0), transparent);
+}
+
+@keyframes scroll {
     0% {
         transform: translateX(0);
     }
@@ -559,13 +593,13 @@ box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
 .footer .social a{
     font-size: 25px;
     color: var(--main-color);
-    border: 2px solid var(--main-color);
+    border: 1px solid var(--main-color);
     width: 42px;
     height: 42px;
     line-height: 42px;
     display: inline-block;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 0.8rem;
     margin: 0 10px;
     transition: 0.3s ease-in-out;
 }
@@ -719,6 +753,8 @@ animation-delay: -2.8s;
         display: block;
     }
     .navbar{
+        position: absolute;
+        top: 100%;
         right: 0;
         width: 50%;
         padding: 1rem 3%;
@@ -763,6 +799,10 @@ animation-delay: -2.8s;
     .services.container{
         grid-template-columns: repeat(1,1fr);
     }
+
+    .services-container{
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width:520px){
@@ -792,5 +832,16 @@ animation-delay: -2.8s;
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
